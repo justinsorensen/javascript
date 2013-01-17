@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<body>
+<!-- // Make an animal class with attributes: name, numLegs and color.
+// exercise inspired by codecademy -->
+
+<script type="text/javascript">
+
+function Animal(name, numLegs, color) {
+    this.name = name;
+    this.numLegs = numLegs;
+    this.color = "brown";
+}
+
+Animal.prototype.sayName = function() {
+		var y="";
+		for(var property in this){
+		y += y+property+" = "+this[property]+", ";  //outputs properties but also outputs the function, must fix
+		
+		}
+};
+
+//Define dog class here
+function Dog(name) {
+	this.name = "blue";			//when changed to static, instance class name takes precedence.
+	this.numLegs = 4;
+						//no color attribute here to demonstrate inheritance hopefully?
+}
+
+function Teacup(name) {
+	this.name = name;
+}
+
+// prototype chain set here
+Dog.prototype = new Animal();
+Teacup.prototype = new Dog();
+
+var dog = new Teacup("tinkerbell");
+<!--//dog.sayName();-->
+
+</script>
+
+<p>Click the button add an attribute to the dog.</p>
+
+<button onclick="myFunction()">Add attribute</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(){
+	var x;
+	
+	var attribute=prompt("Please enter the name of your attribute.");
+	var value=prompt("Please enter the value of your attribute.");
+
+	if (attribute!=null && value!=null){
+			dog[attribute]=value;
+			x = dog.sayName();
+			document.getElementById("demo").innerHTML=x;
+	  }
+}
+</script>
+</body>
+</html>
