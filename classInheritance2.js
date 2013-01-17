@@ -2,14 +2,17 @@
 // exercise inspired by codecademy
 // attempt at looping output for large number of attributes.
 
+<script type="text/javascript">
+
 function Animal(name, numLegs, color) {
     this.name = name;
     this.numLegs = numLegs;
     this.color = "brown";
 }
 Animal.prototype.sayName = function() {
-							for(var property in this)
-							document.write(this[property]+" ");  //outputs properties but also outputs the function, must fix
+		for(var property in this){
+		document.write(property+" = "+this[property]+", ");  //outputs properties but also outputs the function, must fix
+		}
 };
 
 //Define dog class here
@@ -30,7 +33,7 @@ Teacup.prototype = new Dog();
 var dog = new Teacup("tinkerbell");
 dog.sayName();
 
-
+</script>
 
 //Stored for replacement in sayName
 //document.write("Hi, I'm "+this.name+"! I have "+this.numLegs+" legs and I'm "+this.color+"!"); 

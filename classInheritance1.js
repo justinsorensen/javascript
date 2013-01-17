@@ -1,6 +1,8 @@
 // Make an animal class with attributes: name, numLegs and color.
 // exercise inspired by codecademy
 
+<script type="text/javascript">
+
 function Animal(name, numLegs, color) {
     this.name = name;
     this.numLegs = numLegs;
@@ -28,4 +30,4 @@ Teacup.prototype = new Dog();
 var dog = new Teacup("tinkerbell");
 dog.sayName();
 
-
+</script>
